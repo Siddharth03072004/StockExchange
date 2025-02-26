@@ -1,0 +1,160 @@
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+
+.nav-link{
+  margin-left: 40px;
+  
+}
+
+.support-hero {
+  background-color: rgb(56, 126, 209);
+  color: white;
+  padding: 80px 8%;
+}
+
+.support-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 50px;
+}
+
+.support-header h2 {
+  font-size: 32px;
+  font-weight: 600;
+}
+
+.support-header a {
+  color: white;
+  text-decoration: none;
+  font-weight: 500;
+  font-size: 20px;
+}
+
+.support-header a:hover {
+  text-decoration: underline;
+}
+
+.support-content {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
+.support-search {
+  flex: 1;
+  max-width: 58%;
+  padding-right: 30px;
+}
+
+.support-search h1 {
+  font-size: 36px;
+  font-weight: 600;
+  margin-bottom: 20px;
+}
+
+.support-search input {
+  width: 100%;
+  padding: 18px;
+  font-size: 18px;
+  border-radius: 8px;
+  border: none;
+  outline: none;
+  margin-bottom: 25px;
+}
+
+.support-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.support-links a {
+  color: white;
+  text-decoration: none;
+  font-size: 20px;
+  font-weight: 500;
+}
+
+.support-links a:hover {
+  text-decoration: underline;
+}
+
+.support-featured {
+  flex: 1;
+  max-width: 38%;
+}
+
+.support-featured h1 {
+  font-size: 32px;
+  font-weight: 600;
+  margin-bottom: 20px;
+}
+
+.support-featured ol {
+  line-height: 2.5;
+  font-size: 20px;
+  padding-left: 20px;
+}
+
+.support-featured a {
+  color: white;
+  text-decoration: none;
+  font-size: 20px;
+  font-weight: 500;
+}
+
+.support-featured a:hover {
+  text-decoration: underline;
+}
+
+@media (max-width: 992px) {
+  .support-content {
+    flex-direction: column;
+  }
+  .support-search,
+  .support-featured {
+    max-width: 100%;
+    padding: 20px 0;
+  }
+
+  .support-header {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .support-header h2 {
+    font-size: 28px;
+  }
+
+  .support-header a {
+    font-size: 18px;
+  }
+
+  .support-search h1,
+  .support-featured h1 {
+    font-size: 28px;
+  }
+
+  .support-search input {
+    font-size: 16px;
+    padding: 15px;
+  }
+
+  .support-links a,
+  .support-featured a {
+    font-size: 18px;
+  }
+}
