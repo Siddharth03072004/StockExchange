@@ -14,7 +14,7 @@ const {OrdersModel} = require("./model/OrdersModel")
 
 const app = express();
 const corsOptions = {
-    origin: ['https://stock-exchange-ds.vercel.app/'],
+    origin: ['http://localhost:3000', 'https://stock-exchange-ds.vercel.app/'],
 };
 
 app.use(cors(corsOptions));
