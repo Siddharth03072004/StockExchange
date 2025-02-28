@@ -5,7 +5,7 @@ const DashboardRedirect = () => {
   const dashboardURL = "https://stock-exchange-ds.vercel.app/";
 
   useEffect(() => {
-    window.location.href = dashboardURL;
+    window.location.replace(dashboardURL); // Use replace() to avoid history issues
   }, []);
 
   return (
