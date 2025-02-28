@@ -13,8 +13,13 @@ const uri = process.env.MONGO_URL || 3002;
 const {OrdersModel} = require("./model/OrdersModel")
 
 const app = express();
+const corsOptions = {
+    origin: ['https://stock-exchange-ds.vercel.app/'],
+};
 
-app.use(cors());
+app.use(cors(corsOptions));
+
+
 app.use(bodyParser.json());
 // app.get('/addHoldings', async(req, res) => {
 //     let tempHoldings = [
