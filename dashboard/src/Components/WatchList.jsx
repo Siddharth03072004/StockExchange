@@ -13,7 +13,7 @@ import {
   MoreHoriz,
 } from "@mui/icons-material";
 
-import { watchlist } from "../data/data";
+import { watchlist } from "../data/data.js";
 //import { data } from "react-router-dom";
 const labels = watchlist.map((subArray) => subArray["name"]);
 const WatchList = () => {
