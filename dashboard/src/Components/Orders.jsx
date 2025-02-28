@@ -8,7 +8,7 @@ const Orders = () => {
 
   useEffect(() => {
     axios
-      .get("https://stockexchange-pfdh.onrender.com/allOrders")
+      .get("https://stockexchange-msls.onrender.com/allOrders")
       .then((res) => {
         console.log(res.data);
         setAllOrders(res.data);

@@ -8,7 +8,7 @@ const Positions = () => {
 
   useEffect(() => {
     axios
-      .get("https://stockexchange-pfdh.onrender.com/allPositions")
+      .get("https://stockexchange-msls.onrender.com/allPositions")
       .then((res) => {
         console.log(res.data);
         setAllPositions(res.data);

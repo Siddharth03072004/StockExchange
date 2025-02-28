@@ -8,13 +8,13 @@ const Summary = () => {
 
   useEffect(() => {
     axios
-      .get("https://stockexchange-pfdh.onrender.com/allHoldings")
+      .get("https://stockexchange-msls.onrender.com/allHoldings")
       .then((res) => {
         setHoldings(res.data);
       });
 
     axios
-      .get("https://stockexchange-pfdh.onrender.com/allOrders")
+      .get("https://stockexchange-msls.onrender.com/allOrders")
       .then((res) => {
         setOrders(res.data);
       });

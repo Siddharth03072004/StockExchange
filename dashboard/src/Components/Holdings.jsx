@@ -7,7 +7,7 @@ const Holdings = () => {
 
   useEffect(() => {
     axios
-      .get("https://stockexchange-pfdh.onrender.com/allHoldings")
+      .get("https://stockexchange-msls.onrender.com/allHoldings")
       .then((res) => {
         console.log(res.data);
         setAllHoldings(res.data);
