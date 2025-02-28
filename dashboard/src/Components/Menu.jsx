@@ -70,7 +70,9 @@ const Menu = () => {
           <p
             className="username"
             style={{ cursor: "pointer" }}
-            onClick={() => (window.location.href = "http://localhost:3001/")}
+            onClick={() =>
+              (window.location.href = "https://stock-exchange-fr.vercel.app/")
+            }
           >
             Home
           </p>
