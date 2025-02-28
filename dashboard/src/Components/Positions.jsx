@@ -1,16 +1,18 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
-import PositionsChart from "./PortFolioChart"; 
-import PositionsPnlChart from "./P&LpositionChart"; 
+import PositionsChart from "./PortFolioChart";
+import PositionsPnlChart from "./P&LpositionChart";
 
 const Positions = () => {
   const [allPositions, setAllPositions] = useState([]);
 
   useEffect(() => {
-    axios.get("http://localhost:3002/allPositions").then((res) => {
-      console.log(res.data);
-      setAllPositions(res.data);
-    });
+    axios
+      .get("https://stockexchange-pfdh.onrender.com/allPositions")
+      .then((res) => {
+        console.log(res.data);
+        setAllPositions(res.data);
+      });
   }, []);
 
   return (
@@ -55,7 +57,7 @@ const Positions = () => {
       </div>
       <div className="row"></div>
       <div className="row"></div>
-      
+
       <div className="positions-charts">
         <h3 className="title">Portfolio Distribution</h3>
         <div className="row">

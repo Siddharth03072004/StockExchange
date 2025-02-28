@@ -1,16 +1,18 @@
 import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import axios from "axios";
-import OrdersChart from "./StackedBarChart"; 
+import OrdersChart from "./StackedBarChart";
 
 const Orders = () => {
   const [allOrders, setAllOrders] = useState([]);
 
   useEffect(() => {
-    axios.get("http://localhost:3002/allOrders").then((res) => {
-      console.log(res.data);
-      setAllOrders(res.data);
-    });
+    axios
+      .get("https://stockexchange-pfdh.onrender.com/allOrders")
+      .then((res) => {
+        console.log(res.data);
+        setAllOrders(res.data);
+      });
   }, []);
 
   return (
@@ -57,7 +59,6 @@ const Orders = () => {
             </div>
             <div className="row"></div>
 
-            
             <div className="orders-chart">
               <h3>Order Summary (BUY vs SELL)</h3>
               <OrdersChart orders={allOrders} />

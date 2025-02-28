@@ -6,10 +6,12 @@ const Holdings = () => {
   const [allHoldings, setAllHoldings] = useState([]);
 
   useEffect(() => {
-    axios.get("http://localhost:3002/allHoldings").then((res) => {
-      console.log(res.data);
-      setAllHoldings(res.data);
-    });
+    axios
+      .get("https://stockexchange-pfdh.onrender.com/allHoldings")
+      .then((res) => {
+        console.log(res.data);
+        setAllHoldings(res.data);
+      });
   }, []);
 
   const labels = allHoldings.map((subArray) => subArray["name"]);

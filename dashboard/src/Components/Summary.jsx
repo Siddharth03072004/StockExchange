@@ -7,13 +7,17 @@ const Summary = () => {
   const [marginAvailable, setMarginAvailable] = useState(3740); // Dummy default value
 
   useEffect(() => {
-    axios.get("http://localhost:3002/allHoldings").then((res) => {
-      setHoldings(res.data);
-    });
+    axios
+      .get("https://stockexchange-pfdh.onrender.com/allHoldings")
+      .then((res) => {
+        setHoldings(res.data);
+      });
 
-    axios.get("http://localhost:3002/allOrders").then((res) => {
-      setOrders(res.data);
-    });
+    axios
+      .get("https://stockexchange-pfdh.onrender.com/allOrders")
+      .then((res) => {
+        setOrders(res.data);
+      });
   }, []);
 
   const totalInvestment = holdings.reduce(
