@@ -6,6 +6,7 @@ import axios from "axios";
 import GeneralContext from "./GeneralContext";
 
 import "./BuyActionWindow.css";
+axios.defaults.withCredentials = true;
 
 const BuyActionWindow = ({ uid }) => {
   const [stockQuantity, setStockQuantity] = useState(1);

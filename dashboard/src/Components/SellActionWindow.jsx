@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import axios from "axios";
 import GeneralContext from "./GeneralContext";
 import "./BuyActionWindow.css";
-
+axios.defaults.withCredentials = true;
 const SellActionWindow = ({ uid }) => {
   const { closeSellWindow } = useContext(GeneralContext);
   const [stockQuantity, setStockQuantity] = useState(1);

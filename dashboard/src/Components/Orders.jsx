@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import axios from "axios";
 import OrdersChart from "./StackedBarChart";
-
+axios.defaults.withCredentials = true;
 const Orders = () => {
   const [allOrders, setAllOrders] = useState([]);
 

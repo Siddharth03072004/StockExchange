@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { VerticalGraph } from "./VerticalGraph";
 import axios from "axios";
-
+axios.defaults.withCredentials = true;
 const Holdings = () => {
   const [allHoldings, setAllHoldings] = useState([]);
 

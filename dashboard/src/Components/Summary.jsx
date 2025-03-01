@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
-
+axios.defaults.withCredentials = true;
 const Summary = () => {
   const [holdings, setHoldings] = useState([]);
   const [orders, setOrders] = useState([]);

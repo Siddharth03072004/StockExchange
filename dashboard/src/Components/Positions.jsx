@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import axios from "axios";
 import PositionsChart from "./PortFolioChart";
 import PositionsPnlChart from "./P&LpositionChart";
-
+axios.defaults.withCredentials = true;
 const Positions = () => {
   const [allPositions, setAllPositions] = useState([]);
 
