@@ -12,9 +12,6 @@ createRoot(document.getElementById("root")).render(
     <BrowserRouter>
       <Routes>
         <Route path="/" element={<Home />} />
-        <Route path="/orders" element={<Orders />} />
-        <Route path="/positions" element={<Positions />} />
-        <Route path="/holdings" element={<Holdings />} />
       </Routes>
     </BrowserRouter>
   </StrictMode>
