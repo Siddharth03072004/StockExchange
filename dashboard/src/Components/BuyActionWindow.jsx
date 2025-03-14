@@ -1,39 +1,24 @@
 import React, { useState, useContext } from "react";
 import axios from "axios";
 import GeneralContext from "./GeneralContext";
-
-import "./BuyActionWindow.css";
 axios.defaults.withCredentials = true;
 
 const BuyActionWindow = ({ uid }) => {
   const [stockQuantity, setStockQuantity] = useState(1);
   const [stockPrice, setStockPrice] = useState(0.0);
-  const [isLoading, setIsLoading] = useState(false);
-  const [error, setError] = useState(null);
-
   const { closeBuyWindow } = useContext(GeneralContext);
 
   const handleBuyClick = async () => {
-    setIsLoading(true);
-    setError(null);
-
     try {
-      const response = await axios.post(
-        "https://stockexchange-msls.onrender.com/newOrder",
-        {
-          name: uid,
-          qty: stockQuantity,
-          price: stockPrice,
-          mode: "BUY",
-        }
-      );
-      alert("Order placed successfully!");
+      await axios.post("https://stockexchange-msls.onrender.com/newOrder", {
+        name: uid,
+        qty: stockQuantity,
+        price: stockPrice,
+        mode: "BUY",
+      });
       closeBuyWindow();
     } catch (err) {
       console.error("Error placing order:", err);
-      setError("Failed to place order. Please try again.");
-    } finally {
-      setIsLoading(false);
     }
   };
 
@@ -52,7 +37,7 @@ const BuyActionWindow = ({ uid }) => {
               name="qty"
               id="qty"
               min="1"
-              onChange={(e) => setStockQuantity(parseInt(e.target.value))}
+              onChange={(e) => setStockQuantity(parseInt(e.target.value) || 1)}
               value={stockQuantity}
             />
           </fieldset>
@@ -64,7 +49,7 @@ const BuyActionWindow = ({ uid }) => {
               id="price"
               step="0.05"
               min="0"
-              onChange={(e) => setStockPrice(parseFloat(e.target.value))}
+              onChange={(e) => setStockPrice(parseFloat(e.target.value) || 0)}
               value={stockPrice}
             />
           </fieldset>
@@ -77,17 +62,15 @@ const BuyActionWindow = ({ uid }) => {
           <button
             className="btn btn-blue"
             onClick={handleBuyClick}
-            disabled={isLoading || stockQuantity <= 0 || stockPrice <= 0}
+            disabled={stockQuantity <= 0 || stockPrice <= 0}
           >
-            {isLoading ? "Placing Order..." : "Buy"}
+            Buy
           </button>
           <button className="btn btn-grey" onClick={handleCancelClick}>
             Cancel
           </button>
         </div>
       </div>
-
-      {error && <p className="error">{error}</p>}
     </div>
   );
 };
