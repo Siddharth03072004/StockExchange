@@ -16,11 +16,13 @@ const app = express();
 
 //app.use(cors());
 const corsOptions = {
-    origin: ['http://localhost:3002', 'https://stock-exchange-ds.vercel.app/', 'https://stockexchange-msls.onrender.com/'],
+    origin: ['http://localhost:3002', 'https://stock-exchange-ds.vercel.app', 'https://stockexchange-msls.onrender.com'],
     credentials: true, // Allow credentials (if needed)
     optionsSuccessStatus: 200,
 };
 app.use(bodyParser.json());
+//app.options('*', cors(corsOptions));
+
 app.use(cors(corsOptions));
 // app.use((req, res, next) => {
 //     res.header("Access-Control-Allow-Origin", "https://stock-exchange-ds.vercel.app");
