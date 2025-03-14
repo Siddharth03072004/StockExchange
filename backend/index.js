@@ -16,7 +16,7 @@ const app = express();
 
 //app.use(cors());
 const corsOptions = {
-    origin: ['http://localhost:3002', 'https://stock-exchange-ds.vercel.app/', 'https://stockexchange-msls.onrender.com/'],
+    origin: ['http://localhost:3002',  'https://stockexchange-msls.onrender.com/'],
     credentials: true, // Allow credentials (if needed)
     optionsSuccessStatus: 200,
 };
