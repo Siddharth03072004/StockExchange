@@ -2,7 +2,7 @@ import React, { useEffect } from "react";
 import { GridLoader } from "react-spinners";
 
 const DashboardRedirect = () => {
-  const dashboardURL = "https://stock-exchange-ds.vercel.app/";
+  const dashboardURL = "http://localhost:5173/";
 
   useEffect(() => {
     window.location.replace(dashboardURL); // Use replace() to avoid history issues

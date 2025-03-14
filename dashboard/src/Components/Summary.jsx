@@ -4,7 +4,7 @@ axios.defaults.withCredentials = true;
 const Summary = () => {
   const [holdings, setHoldings] = useState([]);
   const [orders, setOrders] = useState([]);
-  const [marginAvailable, setMarginAvailable] = useState(3740); // Dummy default value
+  //const [marginAvailable, setMarginAvailable] = useState(3740); // Dummy default value
 
   useEffect(() => {
     axios

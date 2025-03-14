@@ -10,13 +10,10 @@ import {
   Legend,
 } from "chart.js";
 
-
 ChartJS.register(BarElement, CategoryScale, LinearScale, Tooltip, Legend);
 
 const OrdersChart = ({ orders }) => {
-
   const stockNames = [...new Set(orders.map((stock) => stock.name))];
-
 
   const buyData = stockNames.map((name) => {
     return orders
@@ -29,7 +26,6 @@ const OrdersChart = ({ orders }) => {
       .filter((stock) => stock.name === name && stock.mode === "SELL")
       .reduce((total, stock) => total + stock.qty, 0); // Sum up the qty for SELL mode
   });
-
 
   const data = {
     labels: stockNames,
@@ -46,7 +42,6 @@ const OrdersChart = ({ orders }) => {
       },
     ],
   };
-
 
   const options = {
     responsive: true,

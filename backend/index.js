@@ -13,19 +13,21 @@ const uri = process.env.MONGO_URL || 3002;
 const {OrdersModel} = require("./model/OrdersModel")
 
 const app = express();
+
+//app.use(cors());
 const corsOptions = {
-    origin: ['http://localhost:3002', 'https://stock-exchange-ds.vercel.app/'],
+    origin: ['http://localhost:3002', 'https://stock-exchange-ds.vercel.app/', 'https://stockexchange-msls.onrender.com/'],
     credentials: true, // Allow credentials (if needed)
     optionsSuccessStatus: 200,
 };
 app.use(bodyParser.json());
 app.use(cors(corsOptions));
-app.use((req, res, next) => {
-    res.header("Access-Control-Allow-Origin", "https://stock-exchange-ds.vercel.app");
-    res.header("Access-Control-Allow-Methods", "GET, POST, PUT, DELETE, OPTIONS");
-    res.header("Access-Control-Allow-Headers", "Content-Type, Authorization");
-    next();
-});
+// app.use((req, res, next) => {
+//     res.header("Access-Control-Allow-Origin", "https://stock-exchange-ds.vercel.app");
+//     res.header("Access-Control-Allow-Methods", "GET, POST, PUT, DELETE, OPTIONS");
+//     res.header("Access-Control-Allow-Headers", "Content-Type, Authorization");
+//     next();
+// });
 
 
 // app.get('/addHoldings', async(req, res) => {
